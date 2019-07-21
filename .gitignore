@@ -1,0 +1,10 @@
+*.ipynb_checkpoints/
+*.vscode
+UnityEnv/*
+env/*
+*.log
+*.egg-info
+*__pycache__/
+*.pyc
+torch
+#Results/Report.ipynb
