@@ -58,13 +58,13 @@ You are now ready to open the jupyter notebook for training and testing Tennis a
 
 The checkpoint from my training is saved in Checkpoints [folder](./Checkpoints). Follow the instructions from the provided notebook. Test the trained agent and see the results.
 
-``` jupyter notebook testReacherAgent.ipynb ```
+``` jupyter notebook testTennisAgent.ipynb ```
 
 #### 3. Train your own Agent:
 
-Instructions for training your own agent is shown in below notebook.
+Instructions for training your own agent is shown in the notebook below.
 
-``` jupyter notebook trainReacherAgent.ipynb  ```
+``` jupyter notebook trainTennisAgent.ipynb  ```
  
 
 
