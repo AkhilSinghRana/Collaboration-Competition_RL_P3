@@ -67,10 +67,9 @@ Instructions for training your own agent is shown in the notebook below.
 ``` jupyter notebook trainTennisAgent.ipynb  ```
  
 
-
 ### Results
 
-The environment agent in this training was solved in 397 episodes! The algorithm used for training was DDPG. The results were achieved after a careful hyperparameter tuning, leading to a significant improvement. To read more about the algorithm, network architecture and hyper-Parameters settings read the [Report](./Report.pdf)
+The environment agent in this training was solved in 592 episodes! The algorithm used for training was DDPG. The results were achieved after a careful hyperparameter tuning, leading to a significant improvement. To read more about the algorithm, network architecture and hyper-Parameters settings read the [Report](./Report.pdf)
 
 The training plot of the agent showing the scores improvement over the epsiodes is shown below.
 ![Scores](./Results/ScoresPlot.png)
