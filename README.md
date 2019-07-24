@@ -4,16 +4,20 @@
 
 ### Introduction
 
-In this environment, a double-jointed arm can move to target locations. A reward of +0.1 is provided for each step that the agent's hand is in the goal location. Thus, the goal of the agent is to maintain its position at the target location for as many time steps as possible. The solution in this repository is currently only tested on single agent, in future the solution to multiple agent environment will be added. 
+In this environment, two agents control rackets to bounce a ball over a net. If an agent hits the ball over the net, it receives a reward of +0.1. If an agent lets a ball hit the ground or hits the ball out of bounds, it receives a reward of -0.01. Thus, the goal of each agent is to keep the ball in play.
 
-The observation space consists of 33 variables corresponding to position, rotation, velocity, and angular velocities of the arm. Each action is a vector with four numbers, corresponding to torque applicable to two joints. Every entry in the action vector should be a number between -1 and 1.
+The observation space consists of 8 variables corresponding to the position and velocity of the ball and racket. Each agent receives its own, local observation. Two continuous actions are available, corresponding to movement toward (or away from) the net, and jumping.
 
-The task is episodic, and in order to solve the environment, the agent must get an average score of +30 over 100 consecutive episodes.
+The task is episodic, and in order to solve the environment, your agents must get an average score of +0.5 (over 100 consecutive episodes, after taking the maximum over both agents). Specifically,
 
-The trained agent from my training is shown below.
+After each episode, we add up the rewards that each agent received (without discounting), to get a score for each agent. This yields 2 (potentially different) scores. We then take the maximum of these 2 scores.
+This yields a single score for each episode.
+The environment is considered solved, when the average (over 100 episodes) of those scores is at least +0.5.
+
+A trained agent from my training is shown below.
 ![TrainedAgent](./Results/TrainedAgent.gif)
 
-You can learn more about the environment from the official Project instructions from Udacity [here](https://github.com/udacity/deep-reinforcement-learning/tree/master/p2_continuous-control)
+You can learn more about the environment from the official Project instructions from Udacity [here](https://github.com/udacity/deep-reinforcement-learning/tree/master/p3_collab-compet)
 
 ### Setup Instructions:
 #### 1. Requirements
@@ -21,9 +25,9 @@ You can learn more about the environment from the official Project instructions 
 To reproduce the results from this repository, it is suggested to use virtual python environment and python version 3.6. Python 3.7 at the point of creating this repository does not support tensorflow=1.7 which is a dependency of unityagents package. Note* Python3.7 can still be used, if you know how to install pacakages from source, change requirements.txt and use latest version of tensorflow(tested with tf-v1.14). Follow these simple steps to setup the dependencies:
 
 ```shell
-git clone https://github.com/AkhilSinghRana/ReinforcementLearning_Project-2_ContinuousControl.git
+git clone https://github.com/AkhilSinghRana/Collaboration-Competition_RL_P3.git
 
-cd ReinforcementLearning_Project-2_ContinuousControl (cloned Repository root)
+cd Collaboration-Competition_RL_P3 (cloned Repository root)
 
 virtualenv env_name -p python3
 
@@ -36,24 +40,19 @@ pip install -e .
 
  ```
 
-Note*- Windows users might have problem installing torch, in this case install it from [https://pytorch.org/].
+Note*- Windows users might have problem installing torch, in this case install it from the source [https://pytorch.org/].
 The above code will setup all the required dependencies for you. 
 
 Next you need to download the unity environment of Reacher agent. Download the unity environment according to the OS you're using.
    
-   **Single Agent Links:** <br />
-    - Linux: [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Reacher/one_agent/Reacher_Linux.zip) <br />
-    - Mac OSX: [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Reacher/one_agent/Reacher.app.zip) <br />
-    - Windows (32-bit): [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Reacher/one_agent/Reacher_Windows_x86.zip) <br />
-    - Windows (64-bit): [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Reacher/one_agent/Reacher_Windows_x86_64.zip) <br />
-   
-   **Multiple Agents Links(20 Agents):** <br />
-    - Linux: [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Reacher/Reacher_Linux.zip) <br />
-    - Mac OSX: [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Reacher/Reacher.app.zip) <br />
-    - Windows (32-bit): [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Reacher/Reacher_Windows_x86.zip) <br />
-    - Windows (64-bit): [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Reacher/Reacher_Windows_x86_64.zip) <br />
-    
-You are now ready to open the jupyter notebook for training and testing the Reacher agent!
+   **Environment Download Links:** <br />
+    1. Download the environment from one of the links below.  You need only select the environment that matches your operating system:
+    - Linux: [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P3/Tennis/Tennis_Linux.zip)
+    - Mac OSX: [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P3/Tennis/Tennis.app.zip)
+    - Windows (32-bit): [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P3/Tennis/Tennis_Windows_x86.zip)
+    - Windows (64-bit): [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P3/Tennis/Tennis_Windows_x86_64.zip)
+
+You are now ready to open the jupyter notebook for training and testing Tennis agent!
 
 #### 2. Testing/Loading model from checkpoint:
 
