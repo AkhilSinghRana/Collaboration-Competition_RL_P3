@@ -14,10 +14,11 @@ After each episode, we add up the rewards that each agent received (without disc
 This yields a single score for each episode.
 The environment is considered solved, when the average (over 100 episodes) of those scores is at least +0.5.
 
-A trained agent from my training is shown below.
+A trained agent from my training is shown below. 
+
 ![TrainedAgent](./Results/TrainedAgent.gif)
 
-You can learn more about the environment from the official Project instructions from Udacity [here](https://github.com/udacity/deep-reinforcement-learning/tree/master/p3_collab-compet)
+You can learn more about this environment, from the official Project instructions from Udacity [here](https://github.com/udacity/deep-reinforcement-learning/tree/master/p3_collab-compet)
 
 ### Setup Instructions:
 #### 1. Requirements
@@ -43,7 +44,7 @@ pip install -e .
 Note*- Windows users might have problem installing torch, in this case install it from the source [https://pytorch.org/].
 The above code will setup all the required dependencies for you. 
 
-Next you need to download the unity environment of Reacher agent. Download the unity environment according to the OS you're using.
+Next you need to download the unity environment of Tennis agent. Download the unity environment according to the OS you're using.
    
    **Environment Download Links:** <br />
     1. Download the environment from one of the links below.  You need only select the environment that matches your operating system:<br>
