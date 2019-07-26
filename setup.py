@@ -16,10 +16,10 @@ def parse_requiremetns(fname):
     return required
     
 setup(
-    name = "ContinuousControlAgent",
+    name = "CollaborationandCompetitionAgent",
     author = "Akhil Singh Rana",
     author_email = "er.akhil.singh.rana@gmail.com",
-    description = ("This is project2 from Udacity nanodegree program"
+    description = ("This is project3 from Udacity nanodegree program"
                     "Advanced  Reinforcement Learning"),
     long_description = read("README.md"),
     install_requires = parse_requiremetns("requirements.txt"),    
